@@ -11,7 +11,7 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const Bool viewontag         = False;     /* Switch view on tag switch */
-static const char *fonts[]          = { "ComicShannsMono:size=16" };
+static const char *fonts[]          = { "ComicShannsMono:size=12" };
 static const char dmenufont[]       = "monospace:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -48,12 +48,12 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 *  use tags mask to point an application to a specific workspace
 	 */
-	/* class                       instance    title      tags mask      isfloating   monitor */
-	{ "Gimp",                      NULL,       NULL,       0,            0,           -1 },
-	{ "Xfce4-terminal",            NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",                   NULL,       NULL,       5,            0,           -1 },
-	{ "Arcolinux-welcome-app.py",  NULL,       NULL,       0,            1,           -1 },
-	{ "Arcolinux-calamares-tool.py",  NULL,       NULL,       0,            1,           -1 },	
+	/* class                               instance    title      tags mask      isfloating   monitor */
+	{ "TelegramDesktop",                   NULL,       NULL,       1<<6,            0,           1 },
+	{ "discord",                           NULL,       NULL,       1<<6,            0,           1 },
+	{ "Signal",                            NULL,       NULL,       1<<5,            0,           1 },
+	{ "St",                                NULL,       NULL,       1,            0,           1 },
+	{ "Brave-browser",                     NULL,       NULL,       0,            0,            1 },
 };
 
 /* layout(s) */
