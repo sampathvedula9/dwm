@@ -10,10 +10,9 @@
 super + F1
     brave	
 
-# Atom
+# emacs
 super + F2
-	atom
-
+	emacs
 #Inkscape
 super + F3
     inkscape

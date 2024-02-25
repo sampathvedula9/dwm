@@ -17,6 +17,7 @@ run "dex $HOME/.config/autostart/arcolinux-welcome-app.desktop"
 #run xrandr --output HDMI2 --right-of HDMI1 --auto
 #autorandr horizontal
 setxkbmap -option "caps:super" &
+run /usr/bin/emacs --daemon &
 run "nm-applet"
 run "pamac-tray"
 run "variety"

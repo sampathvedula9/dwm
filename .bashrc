@@ -10,7 +10,7 @@ export PAGER='most'
 #export GTK_IM_MODULE=ibus
 #export XMODIFIERS=@im=dbus
 #export QT_IM_MODULE=ibus
-
+export PATH="$HOME/.config/emacs/bin:$PATH"
 PS1='[\u@\h \W]\$ '
 
 # If not running interactively, don't do anything
@@ -33,10 +33,11 @@ alias dwm='cd /home/sampath/.config/arco-dwm/'
 alias al='cd /home/sampath/.config/alacritty/'
 alias nn='cd /home/sampath/.config/nvim/'
 alias ob='nvim /home/sampath/.bashrc'
-alias odwm='nvim /home/sampath/.config/arco-dwm/config.def.h'
+alias odwm='nvim /home/sampath/.config/arco-dwm/config.h'
 alias oal='/home/sampath/.config/alacritty/alacritty.toml'
 alias sx='nvim /home/sampath/.config/arco-dwm/sxhkd/sxhkdrc'
-
+alias emacs='emacsclient -c -a 'emacs''
+alias gc='git clone'
 #list
 alias ls='ls --color=auto'
 alias la='ls -a'
