@@ -153,7 +153,7 @@ struct Client {
   int basew, baseh, incw, inch, maxw, maxh, minw, minh;
   int bw, oldbw;
   unsigned int tags;
-  int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;
+  int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, CenterThisWindow;
   Client *next;
   Client *snext;
   Monitor *mon;
@@ -200,6 +200,7 @@ typedef struct {
   const char *title;
   unsigned int tags;
   int isfloating;
+  int CenterThisWindow;
   int monitor;
 } Rule;
 
@@ -380,6 +381,7 @@ void applyrules(Client *c) {
 
   /* rule matching */
   c->isfloating = 0;
+  c->CenterThisWindow = 0;
   c->tags = 0;
   XGetClassHint(dpy, c->win, &ch);
   class = ch.res_class ? ch.res_class : broken;
@@ -391,6 +393,7 @@ void applyrules(Client *c) {
         (!r->class || strstr(class, r->class)) &&
         (!r->instance || strstr(instance, r->instance))) {
       c->isfloating = r->isfloating;
+      c->CenterThisWindow = r->CenterThisWindow;
       c->tags |= r->tags;
       for (m = mons; m && m->num != r->monitor; m = m->next)
         ;
@@ -1966,6 +1969,14 @@ void tile(Monitor *m) {
              m->ww - mw - (2 * c->bw) - 2 * m->gappx, h - (2 * c->bw), 0);
       ty += HEIGHT(c) + m->gappx;
     }
+
+
+   if (n == 1 && selmon->sel->CenterThisWindow)
+        resizeclient(selmon->sel,
+                (selmon->mw - selmon->mw * 0.5) / 2,
+                (selmon->mh - selmon->mh * 0.5) / 2,
+                selmon->mw * 0.5,
+                selmon->mh * 0.5);
 }
 
 void togglebar(const Arg *arg) {

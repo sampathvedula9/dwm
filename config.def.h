@@ -78,14 +78,13 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      *  use tags mask to point an application to a specific workspace
      */
-    /* class                   instance    title      tags      mask  isfloating
-       monitor */
-    {"TelegramDesktop", NULL, NULL, 1 << 6, 0, 1},
-    {"discord", NULL, NULL, 1 << 6, 0, 1},
-    {"Signal", NULL, NULL, 1 << 5, 0, 1},
-    {"St", NULL, NULL, 2, 0, 1},
-    {"Brave-browser", NULL, NULL, 1, 0, 1},
-    {"1Password", NULL, NULL, 1 << 2, 0, 1},
+    /* class       instance  title tagsmask  isfloating  CenterThisWindow?   monitor */
+    {"TelegramDesktop", NULL, NULL, 1 << 6,   0,              0,               1},
+    {"discord",         NULL, NULL, 1 << 6,   0,              0,               1},
+    {"Signal",          NULL, NULL, 1 << 5,   0,              0,               1},
+    {"St",              NULL, NULL, 2,        0,              0,               1},
+    {"Brave-browser",   NULL, NULL, 1,        0,              0,               1},
+    {"1Password",       NULL, NULL, 1 << 2,   0,              0,               1},
 };
 
 /* layout(s) */
